@@ -1,7 +1,7 @@
 const User = require('../user.model')
 const sendEmail = require('./email.send')
 const msgs = require('./email.msgs')
-const templates = require('./user.templates')
+const templates = require('./email.templates')
 
 // The callback that is invoked when the user submits the form on the client.
 exports.collectEmail = (req, res) => {
@@ -46,7 +46,7 @@ exports.confirmEmail = (req, res) => {
       // user tried to go to a different url than the one provided in the 
       // confirmation email.
       if (!user) {
-        res.json({ msg: msgs.couldnotFind })
+        res.json({ msg: msgs.couldNotFind })
       }
 
       // The user exists but has not been confirmed. We need to confirm this 
