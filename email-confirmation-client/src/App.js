@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import Notifications from 'react-notify-toast'
-import 'react-toastify/dist/ReactToastify.css'
 
 import Landing from './components/Landing'
 import Confirm from './components/Confirm'
@@ -41,7 +40,7 @@ class App extends Component {
       // The server is still asleep, so provide a visual cue with the <Spinner /> 
       // component to give the user that feedback.
       if (this.state.loading) {
-        return <Spinner size='8px' spinning='spinning' />
+        return <Spinner size='8x' spinning='spinning' />
       }
 
       // The server is awake! React Router is used to either show the 
@@ -81,10 +80,7 @@ class App extends Component {
           footer. So, I have abstracted that out to use on future posts with 
           just a couple of props passed in.
         */}
-        <Footer
-          mediumId={'257e5d9de725'}
-          githubRepo={'react-confirm-email'}
-        />
+        <Footer githubRepo={'email-confirmation'} />
       </div>
     );
   }

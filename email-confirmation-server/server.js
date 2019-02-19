@@ -38,7 +38,7 @@ app.use('*', (req, res) => {
 // To get rid of all those semi-annoying Mongoose deprecation warnings.
 const options = {
   useCreateIndex: true,
-  useNewUrlparser: true,
+  useNewUrlParser: true,
   useFindAndModify: false
 }
 

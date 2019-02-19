@@ -19,7 +19,6 @@ export default class Landing extends Component {
   onSubmit = event => {
     event.preventDefault()
     this.setState({sendingEmail: true})
-
     // Super interesting to me that you can mess with the upper and lower case 
     // of the headers on the fetch call and the world does not explode.
     fetch(`${API_URL}/email`, {
@@ -27,7 +26,7 @@ export default class Landing extends Component {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ email: this.email.value })
+      body: JSON.stringify({ email: this.email.current.value })
     })
     .then(res => res.json())
     .then(data => {

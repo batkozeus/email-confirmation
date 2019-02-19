@@ -23,6 +23,7 @@ exports.collectEmail = (req, res) => {
       else if (user && !user.confirmed) {
         sendEmail(user.email, templates.confirm(user._id))
           .then(() => res.json({ msg: msgs.resend }))
+          .catch(err => console.log(err)) 
       }
 
       // The user has already confirmed this email address
